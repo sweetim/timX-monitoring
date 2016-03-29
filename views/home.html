@@ -2,22 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>timX Monitoring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.25.0/css/uikit.min.css" />
 </head>
 <body>
-    <h1>Services status</h1>
+    <div class="uk-container uk-container-center uk-margin-top">
+        <div class="uk-grid">
+            <div class="uk-width-medium-1-1">
+                <h1>Services status</h1>
 
-    <table>
-        <tr>
-            <td>Service</td>
-            <td>Status</td>
-        </tr>
-        {% for status in statuses %}
-        <tr>
-            <td>{{ status.name }}</td>
-            <td>{{ status.status }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+                <table class="uk-table">
+                    <caption>timX microservice health monitoring dashboard</caption>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Status</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for status in statuses %}
+                        <tr>
+                            <td>{{ status.name }}</td>
+                            <td>{{ status.status }}</td>
+                            <td><a href="{{ status.url }}" target="_blank">{{ status.url }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

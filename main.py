@@ -5,5 +5,5 @@ from controller import home, service
 
 app = webapp2.WSGIApplication([
     ('/', home.HomeHandler),
-    ('/service', service.ServiceHandler)
-], debug = True);    
+    webapp2.Route('/service/<service_name>', handler = service.ServiceHandler)
+], debug = True);

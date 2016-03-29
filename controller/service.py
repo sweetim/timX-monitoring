@@ -1,14 +1,20 @@
 import webapp2
 import urllib2
+import json
 
-DEFAULT_SERVICE_NAME = ''
+from config import config
 
 class ServiceHandler(webapp2.RequestHandler):
-    def get(self):
-        service_name = self.request.get('hokaido-trip', DEFAULT_SERVICE_NAME)
-        
+    def get(self, service_name):
         self.response.headers['Content-Type'] = 'text/plain'
-        
-        code = urllib2.urlopen('http://hokaidotrip2015.azurewebsites.net/').getcode()
-        
-        self.response.write(service_name);
+
+        service_url = config.URLS[service_name]
+        response_code = urllib2.urlopen(service_url).getcode()
+
+        obj = {
+            'name': service_name,
+            'url': service_url,
+            'status': response_code
+        }
+
+        self.response.write(json.dumps(obj));

@@ -1,0 +1,4 @@
+cron:
+- description: ping all the microservices every hour
+  url: /
+  schedule: every 1 hours

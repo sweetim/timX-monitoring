@@ -7,7 +7,7 @@ The microservices currently monitored is below:
  - hokaidotrip2015
 
 The main page will summarise the current status of every microservice
- -  [timx-monitoring.appspot.com](timx-monitoring.appspot.com)
+ -  [timx-monitoring.appspot.com](http://timx-monitoring.appspot.com)
 
 This application is built using
   - webapp2

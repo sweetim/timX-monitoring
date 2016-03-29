@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Services status</h1>
+
+    <table>
+        <tr>
+            <td>Service</td>
+            <td>Status</td>
+        </tr>
+        {% for status in statuses %}
+        <tr>
+            <td>{{ status.name }}</td>
+            <td>{{ status.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

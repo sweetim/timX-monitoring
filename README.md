@@ -13,3 +13,15 @@ This application is built using
   - webapp2
 
 and it is hosted in Google App Engine (GAE)
+
+#### Deployment Procedure
+
+To debug in localhost
+```
+dev_appserver.py .
+```
+
+To deploy to GAE server
+```
+appcfg.py -A timx-monitoring -V v1  update .
+```

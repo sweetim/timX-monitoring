@@ -25,3 +25,8 @@ To deploy to GAE server
 ```
 appcfg.py -A timx-monitoring -V v1  update .
 ```
+
+To update cron tasks in production server
+```
+appcfg.py update_cron
+```
